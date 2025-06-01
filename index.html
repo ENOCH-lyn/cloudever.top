@@ -1,157 +1,843 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="Cache-Control" content="no-transform" />
-		<meta http-equiv="Cache-Control" content="no-siteapp" />
-		<meta http-equiv="X-UA-Compatible" content="Chrome=1,IE=Edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		<meta name="applicable-device" content="pc,mobile" />
-		<meta name="format-detection" content="telephone=no" />
-		<title>CloudEver Team</title>
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="shortcut icon" href="images/ce.png" type="image/x-icon" />
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOUDEVER - CTF战队</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #0a0e17;
+            --primary: #00e6f6;
+            --accent: #a020f0;
+            --light-text: #e6f1ff;
+            --mid-gray: #2a3b4d;
+            --dark-card: #121c29;
+        }
 
-	<body>
-		<div class="header clearfix">
-			<a href="" class="logo1">
-				<img src="images/ce.png" alt="" />
-			</a>
-			<ul class="nav-ul clearfix">
-				<li class="on">
-					<a href="index.html">首页</a>
-				</li>
-				<li>
-					<a href="https://enoch.host/archives/ynuctf-2025-wp">YNUCTF2025</a>
-				</li>
-				<!-- <li class="level">
-					<a href="javascript:;">ynu junior 计划</a>
-					<dl>
-						<dd>
-							<a href="">计划说明</a>
-							<a href="">战队成员</a>
-						</dd>
-					</dl>
-				</li> -->
-				<!-- <li>
-					<a href="">WP分享</a>
-				</li>
-				<li>
-					<a href="">xxx</a>
-				</li> -->
-				<li class="popu02">联系我们</li>
-			</ul>
-			<div class="menuBtn">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</div>
-		<div class="popu-coop">
-			<div class="popu-show">
-				<div class="popu-top">
-					<strong>联系我们</strong>
-					<p>请发送邮件至wp@cloudever.top。</p>
-					<!-- <p class="top-font">PS 请尽可能详细描述</p> -->
-				</div>
-				<div class="popu-bot">
-					<span class="popu-close">
-						<img src="images/popu-icon01.png" alt="" /> 关闭</span>
-					<span>
-						<img src="images/popu-icon02.png" alt="" /> 知道了</span>
-				</div>
-			</div>
-		</div>
-		<div class="members-box">
-			<div class="wrap">
-				<div class="record-top clearfix">
-					<div class="record-name">
-						<span>Team members</span>
-						<h1>战队成员</h1>
-					</div>
-				</div>
-				<ul class="members-list clearfix">
-					<li>
-						<div class="one">
-							<img src="images/user/llk.jpg" alt="" />
-							<div class="grid">
-								<span class="txt">PWN</span>
-								<a href="https://blog.csdn.net/llovewuzhengzi" class="gw"></a>
-							</div>
-						</div>
-						<strong>LLK</strong>
-						<p>CloudEver队长</p>
-					</li>
-					<li>
-						<div class="one">
-							<img src="images/user/gw.jpg" alt="" />
-							<div class="grid">
-								<span class="txt">WEB</span>
-								<a href="https://lally.top" class="gw"></a>
-							</div>
-						</div>
-						<strong>火锅要加辣</strong>
-						<p>活在舒服的生命节奏里</p>
-					</li>
-					<li>
-						<div class="one">
-							<img src="images/user/yxz.jpg" alt="" />
-							<div class="grid">
-								<span class="txt">WEB/PWN</span>
-								<a href="https://www.yuque.com/ffreestanding/kernelpwn" class="gw"></a>
-							</div>
-						</div>
-						<strong>FFreestanding</strong>
-						<p>先放着</p>
-					</li>
-					<li>
-						<div class="one">
-							<img src="images/user/ENOCH.jpg" alt="" />
-							<div class="grid">
-								<span class="txt">WEB</span>
-								<a href="https://enoch.host" class="gw"></a>
-							</div>
-						</div>
-						<strong>ENOCH</strong>
-						<p>好想变强。。。</p>
-					</li>
-					<li>
-						<div class="one">
-							<img src="images/user/momo.jfif" alt="" />
-							<div class="grid">
-								<span class="txt">RE</span>
-								<!-- <a href="" class="gw"></a> -->
-							</div>
-						</div>
-						<strong>liuyan</strong>
-						<p>搞事!搞事!搞事!</p>
-					</li>
-					
-				
-				</ul>
-			</div>
-		</div>
-		<div class="footer">
-			<div class="wrap">
-				<div class="fd-logo">
-					<a href="">
-						<!--<img src="" alt="">-->
-					</a>
-				</div>
-				CloudEver Team © 2024 - 2025 All Rights Reserved.
-                <a href=""></a>
-			</div>
-		</div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-		<div class="totop">
-			<img src="images/totop.png" alt="" />
-		</div>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/lib.js"></script>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--dark-bg);
+            color: var(--light-text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-	</body>
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, rgba(10, 14, 23, 0.9) 0%, rgba(25, 40, 65, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--mid-gray);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--primary), #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 40px;
+        }
+
+        .nav-link {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            transition: all 0.3s;
+            padding: 8px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tagline {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(to bottom, #ffffff, #6a7b8d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: var(--dark-bg);
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 230, 246, 0.3);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 230, 246, 0.5);
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            height: 4px;
+            width: 80px;
+            background: var(--primary);
+            margin: 20px auto 0;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: var(--dark-card);
+            border: 1px solid var(--mid-gray);
+            border-radius: 15px;
+            padding: 40px 30px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 230, 246, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 230, 246, 0.2);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 230, 246, 0.05), transparent);
+            z-index: 1;
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .member-card {
+            background: var(--dark-card);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 230, 246, 0.2);
+        }
+
+        .member-img {
+            height: 280px;
+            background: linear-gradient(135deg, var(--mid-gray), var(--dark-card));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 14, 23, 0.9), transparent);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .member-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 230, 246, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .member-icon:hover {
+            background: var(--primary);
+            color: var(--dark-bg);
+        }
+
+        .member-info {
+            padding: 25px;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--light-text);
+        }
+
+        .member-role {
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .achievements {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .achievement {
+            padding: 30px;
+            position: relative;
+        }
+
+        .achievement::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), transparent);
+            border-radius: 10px;
+        }
+
+        .achievement-count {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .achievement-title {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .footer {
+            background: rgba(12, 20, 33, 0.9);
+            border-top: 1px solid var(--mid-gray);
+            padding: 70px 0 30px;
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            max-width: 500px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 230, 246, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 50px;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+
+        /* Animated particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--primary);
+            opacity: 0.3;
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .achievements {
+                flex-direction: column;
+            }
+
+            .achievement::before {
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(to right, var(--primary), transparent);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon" style="background: linear-gradient(135deg, #0a0e17 60%, #00e6f6 100%); border-radius: 50%; box-shadow: 0 4px 16px rgba(0,230,246,0.35); padding: 8px; display: flex; align-items: center; justify-content: center;">
+                    <img src="https://cloudever.top/images/ce.png" alt="CloudEver Logo" style="height: 44px; width: 44px; object-fit: contain; filter: drop-shadow(0 0 12px #00e6f6) brightness(1.2);">
+                </div>
+                <div class="logo-text">CloudEver</div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">关于</a></li>
+                <li class="nav-item"><a href="#team" class="nav-link">队员</a></li>
+                <!-- <li class="nav-item"><a href="#achievements" class="nav-link">战绩</a></li> -->
+
+                <li class="nav-item"><a href="#contact" class="nav-link">加入</a></li>
+                <li class="nav-item">
+                    <a href="https://enoch.host/archives/ynuctf-2025-wp" class="nav-link" target="_blank">YnuCTF</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-tagline">YNU CTF</div>
+            <h1 class="hero-title">CloudEver<br>Team</h1>
+            <p class="hero-subtitle">云南大学CTF校队，成立于2024，致力于网络安全研究、漏洞分析与CTF比赛。迄今为止多场比赛中获奖，举办过校内公开CTF比赛。</p>
+            <a href="#contact" class="hero-btn">加入我们</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title">主要方向</h2>
+        <div class="container">
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="card-title">二进制安全</h3>
+                    <p class="card-text">精通PWN、缓冲区溢出、格式化字符串等漏洞利用，掌握二进制程序分析与漏洞挖掘。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="card-title">内网渗透</h3>
+                    <p class="card-text">熟悉内网信息收集、横向移动、权限提升等攻防技术，模拟真实攻击场景。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="card-title">逆向工程</h3>
+                    <p class="card-text">反汇编与反编译高级恶意软件，分析攻击原理与传播方式。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="card-title">WEB安全</h3>
+                    <p class="card-text">精通XSS、SQL注入、CSRF等Web攻防技术，熟悉主流Web框架安全加固与漏洞修复。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3 class="card-title">MISC</h3>
+                    <p class="card-text">涵盖数字取证、流量分析、隐写、自动化脚本等综合安全领域，解决CTF中的各类杂项挑战，提升全方位攻防能力。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="card-title">密码学</h3>
+                    <p class="card-text">精通对称加密、非对称加密、哈希算法与密码协议分析，破解CTF中的各类加密题目，研究前沿密码技术。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section" id="team">
+        <h2 class="section-title">核心队员</h2>
+        <div class="container">
+            <div class="team-grid">
+                <div class="member-card">
+                    <div class="member-img" style="background-image: url('https://cloudever.top/images/user/llk.jpg'); background-size: cover; background-position: center;">
+                        <div class="member-overlay" style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; padding: 20px;">
+                            <a href="https://blog.csdn.net/llovewuzhengzi" class="member-icon" target="_blank" style="margin-left:0;"><i class="fas fa-globe"></i></a>
+                            <span style="font-size:0.9rem; color:var(--primary); background:rgba(0,230,246,0.08); border-radius:8px; padding:2px 10px; margin-right:0;">pwn</span>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">LLK</h3>
+                        <div class="member-role">CloudEver队长</div>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="member-img" style="background-image: url('https://cloudever.top/images/user/gw.jpg'); background-size: cover; background-position: center;">
+                        <div class="member-overlay" style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; padding: 20px;">
+                            <a href="https://lally.top" class="member-icon" target="_blank" style="margin-left:0;"><i class="fas fa-globe"></i></a>
+                            <span style="font-size:0.9rem; color:var(--primary); background:rgba(0,230,246,0.08); border-radius:8px; padding:2px 10px; margin-right:0;">web</span>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">火锅要加辣</h3>
+                        <div class="member-role">活在舒服的生命节奏里</div>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="member-img" style="background-image: url('https://cloudever.top/images/user/yxz.jpg'); background-size: cover; background-position: center;">
+                        <div class="member-overlay" style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; padding: 20px;">
+                            <a href="https://www.yuque.com/ffreestanding/kernelpwn" class="member-icon" target="_blank" style="margin-left:0;"><i class="fas fa-globe"></i></a>
+                            <span style="font-size:0.9rem; color:var(--primary); background:rgba(0,230,246,0.08); border-radius:8px; padding:2px 10px; margin-right:0;">pwn/web</span>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">FFreestanding</h3>
+                        <div class="member-role">先放着</div>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="member-img" style="background-image: url('https://cloudever.top/images/user/ENOCH.jpg'); background-size: cover; background-position: center;">
+                        <div class="member-overlay" style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; padding: 20px;">
+                            <a href="https://enoch.host" class="member-icon" target="_blank" style="margin-left:0;"><i class="fas fa-globe"></i></a>
+                            <span style="font-size:0.9rem; color:var(--primary); background:rgba(0,230,246,0.08); border-radius:8px; padding:2px 10px; margin-right:0;">web</span>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">ENOCH</h3>
+                        <div class="member-role">好想变强。。。</div>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="member-img" style="background-image: url('https://cloudever.top/images/user/momo.jfif'); background-size: cover; background-position: center;">
+                        <div class="member-overlay" style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; padding: 20px;">
+                            <!-- no blog link -->
+                            <span style="font-size:0.9rem; color:var(--primary); background:rgba(0,230,246,0.08); border-radius:8px; padding:2px 10px; margin-right:0;">re</span>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">liuyan</h3>
+                        <div class="member-role">搞事！搞事！搞事！</div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <!-- <section class="section" id="achievements">
+        <div class="container">
+            <h2 class="section-title">荣誉战绩</h2>
+            <div style="max-width:700px;margin:40px auto 0;padding:0;text-align:center;">
+                <div style="font-size:1.2rem;line-height:2;">
+                    <div>2025 全国大学生信息安全竞赛 — 区域二等奖</div>
+                    <div>2025 举办第一届YUNCTF</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-title">加入我们</h3>
+                    <p class="footer-text">如果你对CTF感兴趣，欢迎加入我们。无论什么水平，都能在我们这里找到属于自己的位置。</p>
+                    <button id="join-btn" class="hero-btn" style="display: inline-block; margin-top: 20px; border: none; cursor: pointer;">申请加入</button>
+                    <div id="join-modal" style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(10,14,23,0.85); z-index:9999; align-items:center; justify-content:center;">
+                        <div style="background:var(--dark-card); border-radius:18px; box-shadow:0 8px 32px rgba(0,230,246,0.15); padding:40px 32px; max-width:90vw; width:340px; text-align:center; position:relative;">
+                            <span id="close-modal" style="position:absolute; top:18px; right:22px; font-size:1.5rem; color:var(--primary); cursor:pointer;"><i class="fas fa-times"></i></span>
+                            <div style="font-family:'Orbitron',sans-serif; font-size:1.3rem; color:var(--primary); margin-bottom:18px; letter-spacing:1px;">加入方式</div>
+                            <div style="color:var(--light-text); font-size:1.1rem; margin-bottom:18px; line-height:1.7;">
+                                请加入QQ群 <span style="color:var(--primary); font-weight:700;">785858011</span><br>
+                                或发送邮件至 <span style="color:var(--primary); font-weight:700;">wp@cloudever.top</span>
+                            </div>
+                            <button id="close-btn" class="hero-btn" style="margin-top:10px; background:linear-gradient(45deg, var(--primary), var(--accent)); color:var(--dark-bg); border:none; border-radius:22px; padding:10px 32px; font-size:1rem; cursor:pointer;">我知道了</button>
+                        </div>
+                    </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var joinBtn = document.getElementById('join-btn');
+                            var joinModal = document.getElementById('join-modal');
+                            var closeModal = document.getElementById('close-modal');
+                            var closeBtn = document.getElementById('close-btn');
+                            joinBtn.onclick = function () {
+                                joinModal.style.display = 'flex';
+                            };
+                            closeModal.onclick = closeBtn.onclick = function () {
+                                joinModal.style.display = 'none';
+                            };
+                        });
+                    </script>
+                </div>
+                <div>
+                    <h3 class="footer-title">联系我们</h3>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-qq"></i>
+                            </div>
+                            <div>QQ群: 785858011</div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div>邮箱: wp@cloudever.top
+                            </div>
+                        </li>
+                        <!-- <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>GitHub: </div>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 CLOUDEVER | YUNCTF. ALL SYSTEMS SECURE.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 创建粒子动画背景
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // 随机大小
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                // 随机位置
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+
+                // 随机动画属性
+                const animationDuration = Math.random() * 20 + 10;
+                const animationDelay = Math.random() * 5;
+                particle.style.animation = `float ${animationDuration}s ${animationDelay}s infinite linear`;
+
+                particlesContainer.appendChild(particle);
+            }
+
+            // 动态添加关键帧
+            const styleSheet = document.styleSheets[0];
+            styleSheet.insertRule(`
+                @keyframes float {
+                    0% {
+                        transform: translate(0, 0) rotate(0deg);
+                        opacity: 0.3;
+                    }
+                    25% {
+                        opacity: 0.6;
+                    }
+                    50% {
+                        opacity: 0.3;
+                    }
+                    75% {
+                        opacity: 0.1;
+                    }
+                    100% {
+                        transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg);
+                        opacity: 0.3;
+                    }
+                }
+            `, styleSheet.cssRules.length);
+        }
+
+        // 当文档加载完成后执行
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // 滚动动画效果
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.section, .card, .member-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+                observer.observe(el);
+
+                el.classList.add('visible');
+            });
+
+            // 添加全局动画类
+            const animationStyles = `
+                .visible {
+                    opacity: 1 !important;
+                    transform: translateY(0) !important;
+                }
+            `;
+            const styleSheet = document.styleSheets[0];
+            styleSheet.insertRule(animationStyles, styleSheet.cssRules.length);
+        });
+    </script>
+</body>
 
 </html>

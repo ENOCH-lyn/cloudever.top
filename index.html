@@ -18,6 +18,9 @@
             --mid-gray: #2a3b4d;
             --dark-card: #121c29;
         }
+        html {
+            scroll-behavior: smooth;
+        }
 
         * {
             margin: 0;
@@ -514,7 +517,7 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#" class="nav-link">首页</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">关于</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">方向</a></li>
                 <li class="nav-item"><a href="#team" class="nav-link">队员</a></li>
                 <!-- <li class="nav-item"><a href="#achievements" class="nav-link">战绩</a></li> -->
 
@@ -707,12 +710,39 @@
                             var joinModal = document.getElementById('join-modal');
                             var closeModal = document.getElementById('close-modal');
                             var closeBtn = document.getElementById('close-btn');
+                            var modalBox = joinModal.querySelector('div');
+
+                            var style = document.createElement('style');
+                            style.innerHTML = `
+                                #join-modal[style*="display: flex"] > div {
+                                    animation: modalFadeIn 0.35s cubic-bezier(.4,2,.6,1) both;
+                                }
+                                @keyframes modalFadeIn {
+                                    0% { opacity: 0; transform: scale(0.85) translateY(40px);}
+                                    100% { opacity: 1; transform: scale(1) translateY(0);}
+                                }
+                                #join-modal.modal-hide > div {
+                                    animation: modalFadeOut 0.25s cubic-bezier(.4,2,.6,1) both;
+                                }
+                                @keyframes modalFadeOut {
+                                    0% { opacity: 1; transform: scale(1) translateY(0);}
+                                    100% { opacity: 0; transform: scale(0.85) translateY(40px);}
+                                }
+                            `;
+                            document.head.appendChild(style);
+
                             joinBtn.onclick = function () {
                                 joinModal.style.display = 'flex';
+                                joinModal.classList.remove('modal-hide');
                             };
-                            closeModal.onclick = closeBtn.onclick = function () {
-                                joinModal.style.display = 'none';
-                            };
+                            function closeModalFunc() {
+                                joinModal.classList.add('modal-hide');
+                                setTimeout(function () {
+                                    joinModal.style.display = 'none';
+                                    joinModal.classList.remove('modal-hide');
+                                }, 250);
+                            }
+                            closeModal.onclick = closeBtn.onclick = closeModalFunc;
                         });
                     </script>
                 </div>
@@ -799,7 +829,6 @@
             `, styleSheet.cssRules.length);
         }
 
-        // 当文档加载完成后执行
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
 

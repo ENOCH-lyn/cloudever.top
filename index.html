@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLOUDEVER - CTF战队</title>
+    <title>CloudEver - CTF战队</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Montserrat:wght@300;400;600;700&display=swap"
@@ -789,108 +789,99 @@
         </div>
     </footer>
 
-    <script>
-        // 创建粒子动画背景
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
+<script>
+    function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
 
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
 
-                // 随机大小
-                const size = Math.random() * 5 + 2;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
+            const size = Math.random() * 5 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
 
-                // 随机位置
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
 
-                // 随机动画属性
-                const animationDuration = Math.random() * 20 + 10;
-                const animationDelay = Math.random() * 5;
-                particle.style.animation = `float ${animationDuration}s ${animationDelay}s infinite linear`;
+            const animationDuration = Math.random() * 20 + 10;
+            const animationDelay = Math.random() * 5;
+            particle.style.animation = `float ${animationDuration}s ${animationDelay}s infinite linear`;
 
-                particlesContainer.appendChild(particle);
-            }
-
-            // 动态添加关键帧
-            const styleSheet = document.styleSheets[0];
-            styleSheet.insertRule(`
-                @keyframes float {
-                    0% {
-                        transform: translate(0, 0) rotate(0deg);
-                        opacity: 0.3;
-                    }
-                    25% {
-                        opacity: 0.6;
-                    }
-                    50% {
-                        opacity: 0.3;
-                    }
-                    75% {
-                        opacity: 0.1;
-                    }
-                    100% {
-                        transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg);
-                        opacity: 0.3;
-                    }
-                }
-            `, styleSheet.cssRules.length);
+            particlesContainer.appendChild(particle);
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-
-            // 平滑滚动
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // 滚动动画效果
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.section, .card, .member-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
-                observer.observe(el);
-
-                el.classList.add('visible');
-            });
-
-            // 添加全局动画类
-            const animationStyles = `
-                .visible {
-                    opacity: 1 !important;
-                    transform: translateY(0) !important;
+        const style = document.createElement('style');
+        document.head.appendChild(style);
+        style.sheet.insertRule(`
+            @keyframes float {
+                0% {
+                    transform: translate(0, 0) rotate(0deg);
+                    opacity: 0.3;
                 }
-            `;
-            const styleSheet = document.styleSheets[0];
-            styleSheet.insertRule(animationStyles, styleSheet.cssRules.length);
+                25% {
+                    opacity: 0.6;
+                }
+                50% {
+                    opacity: 0.3;
+                }
+                75% {
+                    opacity: 0.1;
+                }
+                100% {
+                    transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg);
+                    opacity: 0.3;
+                }
+            }
+        `);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        createParticles();
+
+        const globalStyles = document.createElement('style');
+        document.head.appendChild(globalStyles);
+        globalStyles.sheet.insertRule(`
+            .visible {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        `);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-    </script>
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section, .card, .member-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+            observer.observe(el);
+        });
+    });
+</script>
 </body>
 
 </html>
